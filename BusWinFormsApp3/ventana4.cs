@@ -17,7 +17,7 @@ namespace BusWinFormsApp3
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("SERVER= DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
+        SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
         public void save()
         {
             try

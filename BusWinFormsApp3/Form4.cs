@@ -31,13 +31,13 @@ namespace BusWinFormsApp3
         private void LoadCombo()
         {
 
-                SqlConnection con = new SqlConnection("SERVER= DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
+                SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
             try
             {
 
                 con.Open();
                 cmd = con.CreateCommand();
-                cmd.CommandText = "SELECT * from Usuarios";
+                cmd.CommandText = "SELECT * from Usuarios where Estado=1";
 
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter();
@@ -61,13 +61,13 @@ namespace BusWinFormsApp3
         private void LoadComboRuta()
         {
 
-            SqlConnection con = new SqlConnection("SERVER= DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
+            SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
             try
             {
 
                 con.Open();
                 cmd = con.CreateCommand();
-                cmd.CommandText = "SELECT * from Rutas";
+                cmd.CommandText = "SELECT * from Rutas where Estado=1";
 
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter();
@@ -91,13 +91,13 @@ namespace BusWinFormsApp3
         private void LoadComboBus()
         {
 
-            SqlConnection con = new SqlConnection("SERVER= DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
+            SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
             try
             {
 
                 con.Open();
                 cmd = con.CreateCommand();
-                cmd.CommandText = "SELECT * from AutoBuses";
+                cmd.CommandText = "SELECT * from AutoBuses where Estado=1";
 
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter();
@@ -118,13 +118,116 @@ namespace BusWinFormsApp3
             }
         }
 
+        private void ActualizarEstadoConductor()
+        {
 
+            SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
+            try
+            {
+
+                con.Open();
+                cmd = con.CreateCommand();
+                cmd.CommandText = "Update Usuarios set Estado = 2 where id = "+(int)Cmb_chofer.Items.Count;
+
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error {ex}");
+            }
+        }
+
+
+        private void InsertarEnTabla()
+        {
+            int Chofer = (int)Cmb_chofer.Items.Count;
+            int Ruta = (int)Cmb_ruta.Items.Count;
+            int Bus = (int)Cmb_autobus.Items.Count;
+
+            SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
+            try
+            {
+
+                con.Open();
+                cmd = con.CreateCommand();
+                cmd.CommandText = "insert into Autobus_Rutas_Conductor values(@Chofer,@Rutas,@Autobus)";
+                cmd.Parameters.AddWithValue("@Chofer",Chofer);
+                cmd.Parameters.AddWithValue("@Rutas", Ruta);
+                cmd.Parameters.AddWithValue("@Autobus", Bus);
+
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error {ex}");
+            }
+        }
+        private void ActualizarEstadoRutas()
+        {
+
+            SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
+            try
+            {
+
+                con.Open();
+                cmd = con.CreateCommand();
+                cmd.CommandText = "Update Rutas set Estado = 2 where id = " + (int)Cmb_ruta.Items.Count;
+
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error {ex}");
+            }
+        }
+
+        private void ActualizarEstadoBus()
+        {
+
+            SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
+            try
+            {
+
+                con.Open();
+                cmd = con.CreateCommand();
+                cmd.CommandText = "Update Autobuses set Estado = 2 where id = " + (int)Cmb_autobus.Items.Count;
+
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error {ex}");
+            }
+        }
         private void Form4_Load(object sender, EventArgs e)
         {
             LoadCombo();
             LoadComboBus();
             LoadComboRuta();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ActualizarEstadoBus();
+            ActualizarEstadoConductor();
+            ActualizarEstadoRutas();
+            InsertarEnTabla();
+            LoadCombo();
+            LoadComboBus();
+            LoadComboRuta();
         }
     }
 }

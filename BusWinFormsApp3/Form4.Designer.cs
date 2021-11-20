@@ -86,7 +86,7 @@ namespace BusWinFormsApp3
             // 
             this.Cmb_autobus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Cmb_autobus.FormattingEnabled = true;
-            this.Cmb_autobus.Location = new System.Drawing.Point(790, 94);
+            this.Cmb_autobus.Location = new System.Drawing.Point(791, 94);
             this.Cmb_autobus.Name = "Cmb_autobus";
             this.Cmb_autobus.Size = new System.Drawing.Size(264, 25);
             this.Cmb_autobus.TabIndex = 5;
@@ -139,6 +139,7 @@ namespace BusWinFormsApp3
             this.button1.TabIndex = 10;
             this.button1.Text = "Añadir";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
