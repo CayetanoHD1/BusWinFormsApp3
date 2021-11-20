@@ -20,8 +20,8 @@ namespace BusWinFormsApp3
         }
 
 
-        /* SqlConnection sql = new SqlConnection(@"Data Source = (localdb)\\MSSQLLOCALDB");*/
-        SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
+        /* SqlConnection sql = new SqlConnection(@"Data Source =DESKTOP-EOJG6OO\\SQLEXPRESSS");*/
+        SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
         public void logear()
         {
             try

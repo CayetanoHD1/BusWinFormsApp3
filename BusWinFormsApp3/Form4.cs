@@ -31,7 +31,7 @@ namespace BusWinFormsApp3
         private void LoadCombo()
         {
 
-                SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
+                SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
             try
             {
 
@@ -61,7 +61,7 @@ namespace BusWinFormsApp3
         private void LoadComboRuta()
         {
 
-            SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
+            SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
             try
             {
 
@@ -91,7 +91,7 @@ namespace BusWinFormsApp3
         private void LoadComboBus()
         {
 
-            SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
+            SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
             try
             {
 
@@ -121,7 +121,7 @@ namespace BusWinFormsApp3
         private void ActualizarEstadoConductor()
         {
 
-            SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
+            SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
             try
             {
 
@@ -147,7 +147,7 @@ namespace BusWinFormsApp3
             int Ruta = (int)Cmb_ruta.Items.Count;
             int Bus = (int)Cmb_autobus.Items.Count;
 
-            SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
+            SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
             try
             {
 
@@ -171,7 +171,7 @@ namespace BusWinFormsApp3
         private void ActualizarEstadoRutas()
         {
 
-            SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
+            SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
             try
             {
 
@@ -193,7 +193,7 @@ namespace BusWinFormsApp3
         private void ActualizarEstadoBus()
         {
 
-            SqlConnection con = new SqlConnection("SERVER= (localdb)\\MSSQLLOCALDB;DATABASE=LoginMD;integrated Security = true");
+            SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
             try
             {
 
