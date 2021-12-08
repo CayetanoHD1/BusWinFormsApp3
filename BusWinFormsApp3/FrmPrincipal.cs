@@ -8,33 +8,41 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
+using CapaEntidades;
+
 
 namespace BusWinFormsApp3
 {
-    
-    public partial class ventana2 : Form
+
+    public partial class FrmPrincipal : Form
     {
-         
-        public ventana2(/*string nombre*/)
+        public string Nombre { get; set; }
+
+        public FrmPrincipal()
         {
-            
+
             InitializeComponent();
-           /* lbl_nombre.Text = nombre;*/
-           
-           
             
-    }   
+
+
+
+
+        } 
 
 
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            name.Text = Nombre;
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Dispose();
+            ventana1 vv = new ventana1();
+            vv.Show();
         }
 
         private void maximizar_v2_Click(object sender, EventArgs e)
@@ -67,27 +75,19 @@ namespace BusWinFormsApp3
 
          
 
-        private void lbl_nombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_Centrar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void Abrirhija(object formhija)
         {
             if (this.panel_Centrar.Controls.Count>0)
             {
                 this.panel_Centrar.Controls.RemoveAt(0);
-                Form frm = formhija as Form;
-                frm.TopLevel = false;
-                frm.Dock = DockStyle.Fill;
-                this.panel_Centrar.Controls.Add(frm);
-                this.panel_Centrar.Tag = frm;
-                frm.Show();
+                Form v = formhija as Form;
+                v.TopLevel = false;
+                v.Dock = DockStyle.Fill;
+                this.panel_Centrar.Controls.Add(v);
+                this.panel_Centrar.Tag = v;
+                v.Show();
             }
            
             
@@ -97,12 +97,12 @@ namespace BusWinFormsApp3
             if (this.panel_Centrar.Controls.Count > 0)
             {
                 this.panel_Centrar.Controls.RemoveAt(0);
-                Form frms = formhija1 as Form;
-                frms.TopLevel = false;
-                frms.Dock = DockStyle.Fill;
-                this.panel_Centrar.Controls.Add(frms);
-                this.panel_Centrar.Tag = frms;
-                frms.Show();
+                Form v1 = formhija1 as Form;
+                v1.TopLevel = false;
+                v1.Dock = DockStyle.Fill;
+                this.panel_Centrar.Controls.Add(v1);
+                this.panel_Centrar.Tag = v1;
+                v1.Show();
             }
 
 
@@ -112,12 +112,12 @@ namespace BusWinFormsApp3
             if (this.panel_Centrar.Controls.Count > 0)
             {
                 this.panel_Centrar.Controls.RemoveAt(0);
-                Form frmss = formhija2 as Form;
-                frmss.TopLevel = false;
-                frmss.Dock = DockStyle.Fill;
-                this.panel_Centrar.Controls.Add(frmss);
-                this.panel_Centrar.Tag = frmss;
-                frmss.Show();
+                Form v2 = formhija2 as Form;
+                v2.TopLevel = false;
+                v2.Dock = DockStyle.Fill;
+                this.panel_Centrar.Controls.Add(v2);
+                this.panel_Centrar.Tag = v2;
+                v2.Show();
             }
 
 
@@ -125,12 +125,12 @@ namespace BusWinFormsApp3
 
         private void Btn_Ruta_Click(object sender, EventArgs e)
         {
-            Abrirhija(new ventana4());
+            Abrirhija(new FrmRuta());
         }
 
         private void Btb_conductor_Click(object sender, EventArgs e)
         {
-            Abrirhija1(new ventana3());
+            Abrirhija1(new FrmDriver());
         }
 
         private void timerOcultar_Tick(object sender, EventArgs e)
@@ -165,15 +165,7 @@ namespace BusWinFormsApp3
 
 
 
-        private void auto_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void panel_Laterar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void menu_Click(object sender, EventArgs e)
         {
@@ -202,16 +194,34 @@ namespace BusWinFormsApp3
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
+       
 
         private void button4_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
         private void Abrirhija3(object formhija3)
+        {
+            if (this.panel_Centrar.Controls.Count > 0)
+            {
+                this.panel_Centrar.Controls.RemoveAt(0);
+                Form frmssss = formhija3 as Form;
+                frmssss.TopLevel = false;
+                frmssss.Dock = DockStyle.Fill;
+                this.panel_Centrar.Controls.Add(frmssss);
+                this.panel_Centrar.Tag = frmssss;
+                frmssss.Show();
+            }
+
+
+        }
+
+        private void btnVincular_Click(object sender, EventArgs e)
+        {
+            Abrirhija3(new FrmVincular());
+        }
+        private void Abrirhija4(object formhija3)
         {
             if (this.panel_Centrar.Controls.Count > 0)
             {
@@ -227,9 +237,13 @@ namespace BusWinFormsApp3
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnUsuario_Click(object sender, EventArgs e)
         {
-            Abrirhija3(new Form4());
+            Abrirhija4(new FrmStop());
+        }
+
+        private void name_Click(object sender, EventArgs e)
+        {
 
         }
     }

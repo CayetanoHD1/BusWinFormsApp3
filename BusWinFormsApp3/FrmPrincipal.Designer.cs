@@ -1,7 +1,7 @@
 ﻿
 namespace BusWinFormsApp3
 {
-    partial class ventana2
+    partial class FrmPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -30,22 +30,25 @@ namespace BusWinFormsApp3
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventana2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.panel_barra = new System.Windows.Forms.Panel();
             this.restaurar_v2 = new System.Windows.Forms.PictureBox();
             this.minimizar_v2 = new System.Windows.Forms.PictureBox();
             this.maximizar_v2 = new System.Windows.Forms.PictureBox();
             this.cerrar_v2 = new System.Windows.Forms.PictureBox();
             this.panel_Laterar = new System.Windows.Forms.Panel();
+            this.btnUsuario = new System.Windows.Forms.Button();
             this.opcion2 = new System.Windows.Forms.PictureBox();
             this.menu = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnVincular = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.Btb_conductor = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Btn_Ruta = new System.Windows.Forms.Button();
             this.auto = new System.Windows.Forms.PictureBox();
             this.panel_Centrar = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.name = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.timerOcultar = new System.Windows.Forms.Timer(this.components);
             this.mostrar = new System.Windows.Forms.Timer(this.components);
@@ -68,7 +71,7 @@ namespace BusWinFormsApp3
             // 
             // panel_barra
             // 
-            this.panel_barra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel_barra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.panel_barra.Controls.Add(this.restaurar_v2);
             this.panel_barra.Controls.Add(this.minimizar_v2);
             this.panel_barra.Controls.Add(this.maximizar_v2);
@@ -137,9 +140,10 @@ namespace BusWinFormsApp3
             // panel_Laterar
             // 
             this.panel_Laterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panel_Laterar.Controls.Add(this.btnUsuario);
             this.panel_Laterar.Controls.Add(this.opcion2);
             this.panel_Laterar.Controls.Add(this.menu);
-            this.panel_Laterar.Controls.Add(this.button5);
+            this.panel_Laterar.Controls.Add(this.btnVincular);
             this.panel_Laterar.Controls.Add(this.button4);
             this.panel_Laterar.Controls.Add(this.Btb_conductor);
             this.panel_Laterar.Controls.Add(this.button2);
@@ -150,7 +154,26 @@ namespace BusWinFormsApp3
             this.panel_Laterar.Name = "panel_Laterar";
             this.panel_Laterar.Size = new System.Drawing.Size(206, 576);
             this.panel_Laterar.TabIndex = 1;
-            this.panel_Laterar.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Laterar_Paint);
+            // 
+            // btnUsuario
+            // 
+            this.btnUsuario.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUsuario.FlatAppearance.BorderSize = 0;
+            this.btnUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
+            this.btnUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuario.Location = new System.Drawing.Point(1, 336);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Size = new System.Drawing.Size(203, 34);
+            this.btnUsuario.TabIndex = 7;
+            this.btnUsuario.Text = "Shop";
+            this.btnUsuario.UseVisualStyleBackColor = false;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // opcion2
             // 
@@ -177,25 +200,25 @@ namespace BusWinFormsApp3
             this.menu.TabStop = false;
             this.menu.Click += new System.EventHandler(this.menu_Click);
             // 
-            // button5
+            // btnVincular
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(3, 353);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(203, 34);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "  Vincular Conductor";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnVincular.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnVincular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnVincular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVincular.FlatAppearance.BorderSize = 0;
+            this.btnVincular.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnVincular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVincular.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVincular.ForeColor = System.Drawing.Color.White;
+            this.btnVincular.Image = ((System.Drawing.Image)(resources.GetObject("btnVincular.Image")));
+            this.btnVincular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVincular.Location = new System.Drawing.Point(3, 401);
+            this.btnVincular.Name = "btnVincular";
+            this.btnVincular.Size = new System.Drawing.Size(203, 34);
+            this.btnVincular.TabIndex = 4;
+            this.btnVincular.Text = "  Vincular Conductor";
+            this.btnVincular.UseVisualStyleBackColor = false;
+            this.btnVincular.Click += new System.EventHandler(this.btnVincular_Click);
             // 
             // button4
             // 
@@ -203,13 +226,13 @@ namespace BusWinFormsApp3
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 516);
+            this.button4.Location = new System.Drawing.Point(3, 517);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(203, 43);
             this.button4.TabIndex = 3;
@@ -219,17 +242,17 @@ namespace BusWinFormsApp3
             // 
             // Btb_conductor
             // 
-            this.Btb_conductor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Btb_conductor.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Btb_conductor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.Btb_conductor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btb_conductor.FlatAppearance.BorderSize = 0;
-            this.Btb_conductor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.Btb_conductor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.Btb_conductor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btb_conductor.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Btb_conductor.ForeColor = System.Drawing.Color.White;
             this.Btb_conductor.Image = ((System.Drawing.Image)(resources.GetObject("Btb_conductor.Image")));
             this.Btb_conductor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btb_conductor.Location = new System.Drawing.Point(1, 276);
+            this.Btb_conductor.Location = new System.Drawing.Point(1, 277);
             this.Btb_conductor.Name = "Btb_conductor";
             this.Btb_conductor.Size = new System.Drawing.Size(205, 34);
             this.Btb_conductor.TabIndex = 2;
@@ -243,13 +266,13 @@ namespace BusWinFormsApp3
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 217);
+            this.button2.Location = new System.Drawing.Point(3, 218);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(203, 34);
             this.button2.TabIndex = 1;
@@ -259,16 +282,17 @@ namespace BusWinFormsApp3
             // 
             // Btn_Ruta
             // 
+            this.Btn_Ruta.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Btn_Ruta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.Btn_Ruta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Ruta.FlatAppearance.BorderSize = 0;
-            this.Btn_Ruta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.Btn_Ruta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.Btn_Ruta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Ruta.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Btn_Ruta.ForeColor = System.Drawing.Color.White;
             this.Btn_Ruta.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Ruta.Image")));
             this.Btn_Ruta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Ruta.Location = new System.Drawing.Point(3, 154);
+            this.Btn_Ruta.Location = new System.Drawing.Point(3, 155);
             this.Btn_Ruta.Name = "Btn_Ruta";
             this.Btn_Ruta.Size = new System.Drawing.Size(203, 34);
             this.Btn_Ruta.TabIndex = 0;
@@ -278,33 +302,62 @@ namespace BusWinFormsApp3
             // 
             // auto
             // 
+            this.auto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.auto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.auto.Image = ((System.Drawing.Image)(resources.GetObject("auto.Image")));
             this.auto.Location = new System.Drawing.Point(3, 4);
             this.auto.Name = "auto";
-            this.auto.Size = new System.Drawing.Size(153, 122);
+            this.auto.Size = new System.Drawing.Size(163, 131);
             this.auto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.auto.TabIndex = 0;
             this.auto.TabStop = false;
-            this.auto.Click += new System.EventHandler(this.auto_Click);
             // 
             // panel_Centrar
             // 
             this.panel_Centrar.BackColor = System.Drawing.Color.White;
+            this.panel_Centrar.Controls.Add(this.tableLayoutPanel1);
+            this.panel_Centrar.Controls.Add(this.name);
             this.panel_Centrar.Controls.Add(this.panel1);
             this.panel_Centrar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Centrar.Location = new System.Drawing.Point(206, 35);
             this.panel_Centrar.Name = "panel_Centrar";
             this.panel_Centrar.Size = new System.Drawing.Size(1078, 576);
             this.panel_Centrar.TabIndex = 2;
-            this.panel_Centrar.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Centrar_Paint);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(895, 83);
+            this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // name
+            // 
+            this.name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.name.ForeColor = System.Drawing.Color.Black;
+            this.name.Image = ((System.Drawing.Image)(resources.GetObject("name.Image")));
+            this.name.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.name.Location = new System.Drawing.Point(915, 4);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(163, 37);
+            this.name.TabIndex = 3;
+            this.name.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.name.Click += new System.EventHandler(this.name_Click);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel1.Location = new System.Drawing.Point(0, 561);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.panel1.Location = new System.Drawing.Point(0, 562);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1078, 15);
             this.panel1.TabIndex = 0;
@@ -359,7 +412,7 @@ namespace BusWinFormsApp3
             this.panel8.Size = new System.Drawing.Size(50, 100);
             this.panel8.TabIndex = 2;
             // 
-            // ventana2
+            // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -367,8 +420,9 @@ namespace BusWinFormsApp3
             this.Controls.Add(this.panel_Centrar);
             this.Controls.Add(this.panel_Laterar);
             this.Controls.Add(this.panel_barra);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ventana2";
+            this.Name = "FrmPrincipal";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel_barra.ResumeLayout(false);
@@ -401,7 +455,6 @@ namespace BusWinFormsApp3
         private System.Windows.Forms.Button Btb_conductor;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox menu;
         private System.Windows.Forms.Timer timerOcultar;
         private System.Windows.Forms.Timer mostrar;
@@ -411,5 +464,9 @@ namespace BusWinFormsApp3
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
+        public System.Windows.Forms.Button btnVincular;
+        public System.Windows.Forms.Button btnUsuario;
+        public System.Windows.Forms.Label name;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

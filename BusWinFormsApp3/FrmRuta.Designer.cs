@@ -1,7 +1,7 @@
 ﻿
 namespace BusWinFormsApp3
 {
-    partial class ventana4
+    partial class FrmRuta
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace BusWinFormsApp3
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventana4));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRuta));
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,8 +41,9 @@ namespace BusWinFormsApp3
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(492, 64);
+            this.label1.Location = new System.Drawing.Point(494, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 44);
             this.label1.TabIndex = 1;
@@ -50,8 +51,9 @@ namespace BusWinFormsApp3
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, 219);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 219);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(258, 222);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -60,8 +62,9 @@ namespace BusWinFormsApp3
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(277, 196);
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(307, 196);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 27);
             this.label2.TabIndex = 3;
@@ -69,12 +72,14 @@ namespace BusWinFormsApp3
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(508, 330);
+            this.button1.Location = new System.Drawing.Point(546, 316);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 35);
+            this.button1.Size = new System.Drawing.Size(138, 44);
             this.button1.TabIndex = 4;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = false;
@@ -82,7 +87,9 @@ namespace BusWinFormsApp3
             // 
             // txtRuta
             // 
-            this.txtRuta.Location = new System.Drawing.Point(426, 186);
+            this.txtRuta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtRuta.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRuta.Location = new System.Drawing.Point(444, 186);
             this.txtRuta.Multiline = true;
             this.txtRuta.Name = "txtRuta";
             this.txtRuta.Size = new System.Drawing.Size(282, 37);
@@ -90,14 +97,14 @@ namespace BusWinFormsApp3
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 447);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(961, 15);
             this.panel1.TabIndex = 6;
             // 
-            // ventana4
+            // FrmRuta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -110,8 +117,7 @@ namespace BusWinFormsApp3
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ventana4";
-            this.Load += new System.EventHandler(this.ventana4_Load);
+            this.Name = "FrmRuta";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
