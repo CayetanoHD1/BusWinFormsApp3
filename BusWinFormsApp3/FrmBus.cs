@@ -87,17 +87,29 @@ namespace BusWinFormsApp3
 
         }
 
+         
+
+        private void BtnOk_Click_1(object sender, EventArgs e)
+        {
+            save();
+        }
+
         private void txt_año_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-              (e.KeyChar != '.'))
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
             {
-                e.Handled = true;
+                e.Handled = false;
+                
             }
-
-            
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
             {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
                 e.Handled = true;
             }
         }

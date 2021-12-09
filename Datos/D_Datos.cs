@@ -8,14 +8,14 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using Xceed.Wpf.Toolkit;
-using CapaDatos.Modelos;
+ 
 
 namespace CapaDatos
 {
    public class D_Datos
     {
         SqlConnection co = new SqlConnection(ConfigurationManager.ConnectionStrings["Conector"].ConnectionString);
-
+        SqlCommand cmd;
         public List<E_Informacion> ListarInformacion(string buscar)
         {
             SqlDataReader read;
@@ -35,10 +35,11 @@ namespace CapaDatos
 
 
                     Id = read.GetString(0),
-                    Cedula = read.GetString(1),
-                    Placa = read.GetString(2),
-                    Ruta = read.GetString(3),
-                    Estado= read.GetString(4)
+                    Nombre = read.GetString(1),
+                    Cedula = read.GetString(2),
+                    Placa = read.GetString(3),
+                    Ruta = read.GetString(4),
+                    Estado= read.GetString(5)
 
 
                 });
@@ -69,8 +70,10 @@ namespace CapaDatos
             {
                 E_informacion2 inf = new E_informacion2();
                 inf.Nombre = read2.IsDBNull(2) ? "" : read2.GetString(2);
-                
-                
+                inf.Rol = read2.IsDBNull(8) ? "" : read2.GetString(8);
+
+
+
                 return inf;
 
 
@@ -115,22 +118,12 @@ namespace CapaDatos
             comando.ExecuteNonQuery();
 
         }
-        public DataTable loaderR()
-        {
-            co.Open();
-            SqlDataAdapter data = new SqlDataAdapter("SP_Conductor_Load", co);
-            //SqlCommand comando = new SqlCommand();
-            data.SelectCommand.CommandType = CommandType.StoredProcedure;
-            co.Close();
-            DataTable dt = new DataTable();
-            data.Fill(dt);
-            return dt;
-            
-        }
+        
 
         public List<string> loadData(string procedure)
         {
             var lista = new List<string> ();
+            co.Close();
 
             co.Open();
             SqlCommand con = new SqlCommand(procedure, co);
@@ -140,7 +133,7 @@ namespace CapaDatos
             
             while(dr.Read())
             {
-                var item = $"{dr["marca"].ToString()} {dr["modelo"].ToString()}-{dr["id"].ToString()}";
+                var item = $"{dr["marca"].ToString()}  {dr["placa"].ToString() }-{dr["id"].ToString()}";
                 lista.Add(item);
             }
 
@@ -148,6 +141,50 @@ namespace CapaDatos
             dr.Close();
             return lista;
         }
+        public List<string> loadRuta(string procedure)
+        {
+            var listar = new List<string>();
+            co.Close();
+
+            co.Open();
+            SqlCommand conn = new SqlCommand(procedure, co);
+            conn.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr;
+            dr = conn.ExecuteReader();
+
+            while (dr.Read())
+            {
+                var item = $"{dr["Ruta"].ToString()}-{dr["id"].ToString()} ";
+                listar.Add(item);
+            }
+
+            co.Close();
+            dr.Close();
+            return listar;
+        }
+        public List<string> loadChofer(string procedure)
+        {
+            var listar = new List<string>();
+            co.Close();
+
+            co.Open();
+            SqlCommand conn = new SqlCommand(procedure, co);
+            conn.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr;
+            dr = conn.ExecuteReader();
+
+            while (dr.Read())
+            {
+                var item = $" {dr["Nombre"].ToString()} {dr["Apellido"].ToString()}-{dr["id"].ToString()}";
+                listar.Add(item);
+            }
+
+            co.Close();
+            dr.Close();
+            return listar;
+        }
+        
+
 
         public void insertDriver(E_InformacionDriver inf)
         {
@@ -252,6 +289,92 @@ namespace CapaDatos
             reader.Close();
 
 
+        }
+       public void Insertartabla(E_Vincular vincular)
+        {
+            try
+            {
+
+                SqlCommand comando = new SqlCommand("SP_Vincular", co);
+                comando.CommandType = CommandType.StoredProcedure;
+                co.Open();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Chofer", Convert.ToInt32(vincular.Chofer));
+                comando.Parameters.AddWithValue("@Bus", Convert.ToInt32(vincular.Autobus));
+                comando.Parameters.AddWithValue("@Ruta", Convert.ToInt32(vincular.Ruta));
+                comando.Parameters.AddWithValue("@Estados", Convert.ToInt32(2));
+
+
+
+                comando.ExecuteNonQuery();
+                co.Close();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                 
+            }
+            
+
+
+        }
+        public void UpdateusUario(E_Vincular ad)
+        {co.Close();
+            SqlCommand command = new SqlCommand("SP_ActualizarU",co);
+            command.CommandType = CommandType.StoredProcedure;
+            
+            co.Open();
+            command.Parameters.AddWithValue("@id", Convert.ToInt32(ad.Id));
+            command.ExecuteNonQuery();
+            
+        }
+        public void UpdateusRuta(E_InformacionR ad)
+        {
+            co.Close();
+            SqlCommand command = new SqlCommand("SP_ActualizarR", co);
+            command.CommandType = CommandType.StoredProcedure;
+
+            co.Open();
+            command.Parameters.AddWithValue("@id", Convert.ToInt32(ad.Id));
+            command.ExecuteNonQuery();
+
+        }
+        public void UpdateusBus(E_InfromacionB add)
+        {
+            co.Close();
+            SqlCommand command = new SqlCommand("SP_ActualizarB", co);
+            command.CommandType = CommandType.StoredProcedure;
+
+            co.Open();
+            command.Parameters.AddWithValue("@id", Convert.ToInt32(add.Id));
+            command.ExecuteNonQuery();
+
+        }
+        public Tablero DashboardDatos(Tablero carga)
+        {
+            cmd = new SqlCommand("SP_Count", co);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter totalRuta = new SqlParameter("@totConductor", 0); totalRuta.Direction = ParameterDirection.Output;
+            SqlParameter totalBus = new SqlParameter("@totBus", 0); totalBus.Direction = ParameterDirection.Output;
+            SqlParameter totRutaD = new SqlParameter("@totRutaD", 0); totRutaD.Direction = ParameterDirection.Output;
+            SqlParameter totRutaO = new SqlParameter("@totRutaO", 0); totRutaO.Direction = ParameterDirection.Output;
+           
+            cmd.Parameters.Add(totalRuta);
+            cmd.Parameters.Add(totalBus);
+            cmd.Parameters.Add(totRutaD);
+            cmd.Parameters.Add(totRutaO);
+           
+            co.Open();
+            cmd.ExecuteNonQuery();
+            carga.Conductor = cmd.Parameters["@totConductor"].Value.ToString();
+            carga.Bus = cmd.Parameters["@totBus"].Value.ToString();
+            carga.RutaD = cmd.Parameters["@totRutaD"].Value.ToString();
+            carga.RutaO = cmd.Parameters["@totRutaO"].Value.ToString();
+
+            return carga;
+            
         }
     }
 }

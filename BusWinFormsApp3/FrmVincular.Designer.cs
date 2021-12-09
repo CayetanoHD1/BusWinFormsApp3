@@ -56,31 +56,33 @@ namespace BusWinFormsApp3
             // 
             // Cmb_chofer
             // 
+            this.Cmb_chofer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Cmb_chofer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Cmb_chofer.FormattingEnabled = true;
-            this.Cmb_chofer.Location = new System.Drawing.Point(99, 105);
+            this.Cmb_chofer.Location = new System.Drawing.Point(155, 96);
             this.Cmb_chofer.Name = "Cmb_chofer";
-            this.Cmb_chofer.Size = new System.Drawing.Size(287, 25);
+            this.Cmb_chofer.Size = new System.Drawing.Size(249, 25);
             this.Cmb_chofer.TabIndex = 3;
             // 
             // Cmb_ruta
             // 
+            this.Cmb_ruta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Cmb_ruta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Cmb_ruta.FormattingEnabled = true;
-            this.Cmb_ruta.Location = new System.Drawing.Point(444, 105);
+            this.Cmb_ruta.Location = new System.Drawing.Point(469, 96);
             this.Cmb_ruta.Name = "Cmb_ruta";
-            this.Cmb_ruta.Size = new System.Drawing.Size(294, 25);
+            this.Cmb_ruta.Size = new System.Drawing.Size(249, 25);
             this.Cmb_ruta.TabIndex = 4;
             // 
             // Cmb_autobus
             // 
+            this.Cmb_autobus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Cmb_autobus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Cmb_autobus.FormattingEnabled = true;
-            this.Cmb_autobus.Location = new System.Drawing.Point(825, 100);
+            this.Cmb_autobus.Location = new System.Drawing.Point(819, 96);
             this.Cmb_autobus.Name = "Cmb_autobus";
-            this.Cmb_autobus.Size = new System.Drawing.Size(294, 25);
+            this.Cmb_autobus.Size = new System.Drawing.Size(249, 25);
             this.Cmb_autobus.TabIndex = 5;
-            this.Cmb_autobus.SelectedIndexChanged += new System.EventHandler(this.Cmb_autobus_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -99,13 +101,13 @@ namespace BusWinFormsApp3
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1131, 573);
             this.panel2.TabIndex = 6;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // Tabla
             // 
+            this.Tabla.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.Tabla.AllowUserToAddRows = false;
             this.Tabla.AllowUserToDeleteRows = false;
-            this.Tabla.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Tabla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Tabla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Tabla.BackgroundColor = System.Drawing.Color.White;
@@ -117,24 +119,24 @@ namespace BusWinFormsApp3
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(0)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Tabla.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Tabla.Location = new System.Drawing.Point(184, 258);
+            this.Tabla.Location = new System.Drawing.Point(121, 282);
             this.Tabla.Name = "Tabla";
             this.Tabla.ReadOnly = true;
             this.Tabla.RowHeadersVisible = false;
             this.Tabla.RowTemplate.Height = 25;
             this.Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Tabla.Size = new System.Drawing.Size(866, 304);
+            this.Tabla.Size = new System.Drawing.Size(866, 254);
             this.Tabla.TabIndex = 20;
-            this.Tabla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Tabla_CellContentClick);
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(558, 28);
+            this.label4.Location = new System.Drawing.Point(469, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(144, 30);
             this.label4.TabIndex = 9;
@@ -142,20 +144,22 @@ namespace BusWinFormsApp3
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(745, 102);
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(724, 96);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 29);
+            this.label3.Size = new System.Drawing.Size(65, 25);
             this.label3.TabIndex = 8;
             this.label3.Text = "AutoBus";
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(495, 204);
+            this.button1.Location = new System.Drawing.Point(495, 189);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 37);
             this.button1.TabIndex = 10;
@@ -165,19 +169,21 @@ namespace BusWinFormsApp3
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(392, 105);
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(410, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 29);
+            this.label2.Size = new System.Drawing.Size(39, 25);
             this.label2.TabIndex = 7;
             this.label2.Text = "Rutas";
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(0, 105);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(74, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 30);
+            this.label1.Size = new System.Drawing.Size(75, 26);
             this.label1.TabIndex = 6;
             this.label1.Text = "Conductor";
             // 
@@ -211,6 +217,6 @@ namespace BusWinFormsApp3
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView Tabla;
+        public System.Windows.Forms.DataGridView Tabla;
     }
 }

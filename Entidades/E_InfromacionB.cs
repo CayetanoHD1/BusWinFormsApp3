@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace CapaEntidades
 {
-    public class E_InformacionR
+   public  class E_InfromacionB
     {
         private string id;
-        private string ruta;
+
         public string Id { get => id; set => id = value; }
-        public string Ruta { get => ruta; set => ruta = value; }
-        
     }
 }

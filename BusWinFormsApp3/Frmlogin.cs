@@ -34,27 +34,35 @@ namespace BusWinFormsApp3
 
                     if (string.IsNullOrWhiteSpace(caja_correo.Text)|| string.IsNullOrEmpty(caja_pass.Text))
                     {
-                        MessageBox.Show("Revisar Campos Correo", "Advertencia");
+                        MessageBox.Show("Revisa que Los Campos esten Correctamente", "Advertencia");
 
 
                     }
-                    if (cmb_Rol.Text == null)
-                    {
-                        MessageBox.Show("Revisar Campos Rol", "Advertencia");
+                     
+                   /* if (cmb_Rol.Text == "Usuario")
+                     {
 
-                    }
-                    else if (string.IsNullOrEmpty(caja_pass.Text))
-                    {
-                        MessageBox.Show("Revisar Campos Contraseña", "Advertencia");
+                         win2.btnVincular.Visible = false;
+                         win2.Btb_conductor.Visible = false;
+                        win2.Show();
+                        
 
-                    }
-                    else
-                    {
+
+
+
+
+
+                     }*/
+                else
+                {
 
                         E_informacion2 info = date.logger(caja_correo.Text, caja_pass.Text, cmb_Rol.SelectedItem.ToString());
-                        if (info != null)
+                   if (info != null)
+                   {
+                        if (info.Rol == "USUARIO")
                         {
-
+                            win2.btnVincular.Visible = false;
+                            win2.Btb_conductor.Visible = false;
                             MessageBox.Show("Welcome:" + info.Nombre, "Informacion");
 
                             this.Hide();
@@ -65,6 +73,20 @@ namespace BusWinFormsApp3
 
 
                         }
+                        else
+                        {
+
+                            MessageBox.Show("Welcome:" + info.Nombre, "Informacion");
+
+                            this.Hide();
+                            win2.Nombre = info.Nombre;
+
+
+                            win2.Show();
+                        }
+
+
+                   }
                       else
                       {
                          MessageBox.Show("Datos Incorrectos", "Informacion");
@@ -79,7 +101,7 @@ namespace BusWinFormsApp3
                 catch (Exception ex)
                 {
 
-                    MessageBox.Show("Ha ocurrido Un Error", "Informacion");
+                    MessageBox.Show("Ha ocurrido Un Error Revisa que los Campos Esten Correctos", "Informacion");
                 }
 
             

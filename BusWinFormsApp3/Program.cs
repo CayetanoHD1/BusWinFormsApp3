@@ -1,3 +1,4 @@
+using Presentacion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace BusWinFormsApp3
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmVincular());
+            Application.Run(new ventana1());
         }
     }
 }

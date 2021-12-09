@@ -9,286 +9,136 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDatos;
 using CapaNegocio;
+using CapaEntidades;
 
 namespace BusWinFormsApp3
 {
     public partial class FrmVincular : Form
     {
-        /* SqlConnection cn;
-         SqlCommand cmd;
-         SqlDataReader dr ,daa;
-         SqlDataAdapter da;
-         DataTable dt;*/
+        
         B_Informacion entra = new B_Informacion();
       
 
         public FrmVincular()
         {
             InitializeComponent();
+       
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void LoadCombo()
-        {
-
-            
-
-             /*   SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
-            try
-            {
-
-                con.Open();
-                cmd = con.CreateCommand();
-                cmd.CommandText = "select * from Usuarios where Estado=1 and Rol='Usuario'"
-
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter();
-                dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    Cmb_chofer.Items.Add($"{dr["Nombre"].ToString()} {dr["Apellido"].ToString()}-{dr["id"].ToString()} ");
-                }
-
-                dr.Close();
-                con.Close();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error {ex}");
-            }*/
-        }
-
-        private void LoadComboRuta()
-        {
-
-            /*SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
-            try
-            {
-
-                con.Open();
-                cmd = con.CreateCommand();
-                cmd.CommandText = "SELECT * from Rutas where Estado=1";
-
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter();
-                dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    Cmb_ruta.Items.Add($"{dr["Ruta"].ToString()}-{dr["Id"]}");
-                }
-
-                dr.Close();
-                con.Close();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error {ex}");
-            }*/
-        }
-
-        private void LoadComboBus()
-        {
-
-           /* SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
-            try
-            {
-
-                con.Open();
-                cmd = con.CreateCommand();
-                cmd.CommandText = "SELECT * from AutoBuses where Estado=1";
-
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter();
-                dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    Cmb_autobus.Items.Add($"{dr["Marca"].ToString()} {dr["Modelo"].ToString()}-{dr["id"].ToString()}");
-                }
-
-                dr.Close();
-                con.Close();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error {ex}");
-            }*/
-        }
-
-        private void ActualizarEstadoConductor()
-        {
-           /* string Chofer = Cmb_chofer.Text.Split("-")[1];
-             
-
-            SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
-            try
-            {
-                
-                con.Open();
-                cmd = con.CreateCommand();
-               
-                cmd.CommandText = "Update Usuarios set Estado = 2 where id = "+Convert.ToInt32(Chofer);
-
-                cmd.ExecuteNonQuery();
-
-                con.Close();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error {ex}");
-            }*/
-        }
-
-
-       /* private void InsertarEnTabla()
-        {
-           /* string Chofer = Cmb_chofer.Text.Split("-")[1];
-            string Ruta = Cmb_ruta.Text.Split("-")[1];
-            string Bus = Cmb_autobus.Text.Split("-")[1]; 
-
-            SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
-             
-            try
-            {
-                
-                SqlCommand comando = new SqlCommand("SP_Insertar", con);
-                comando.CommandType = CommandType.StoredProcedure;
-                con.Open();
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@Chofer", Convert.ToInt32(Chofer));
-                comando.Parameters.AddWithValue("@Rutas", Convert.ToInt32(Ruta));
-                comando.Parameters.AddWithValue("@Autobus", Convert.ToInt32(Bus));
-                MessageBox.Show("Conductor Añadido");
-
-                comando.ExecuteNonQuery();
-                con.Close();
-
-                
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error {ex}");
-            }
-            con.Close();
-
-        } */
-       /* private void ActualizarEstadoRutas()
-        {
-     
-            string Ruta = Cmb_ruta.Text.Split("-")[1];
-           
-
-            SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
-            try
-            {
-
-                con.Open();
-                cmd = con.CreateCommand();
-                cmd.CommandText = "Update Rutas set Estado = 2 where id = " +Convert.ToInt32(Ruta);
-                
-
-                cmd.ExecuteNonQuery();
-
         
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error {ex}");
-            }        con.Close();
-        }
-
-        private void ActualizarEstadoBus()
+        public void validar()
         {
-         
-            string Bus = Cmb_autobus.Text.Split("-")[1];
-
-            SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
-            try
+            if (string.IsNullOrWhiteSpace(Cmb_ruta.Text) || string.IsNullOrWhiteSpace(Cmb_chofer.Text) || string.IsNullOrWhiteSpace(Cmb_autobus.Text))
             {
+                MessageBox.Show("Dejastes Campos en Blanco","Informacion");
 
-                con.Open();
-                cmd = con.CreateCommand();
-                cmd.CommandText = "Update Autobuses set Estado = 2 where id = " + Convert.ToInt32(Bus);
-
-                cmd.ExecuteNonQuery();
-
-                
             }
-
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Error {ex}");
-            }con.Close();
-        }*/
+                add();
+                ActualizarUsuario();
+                ActualizarRuta();
+                ActualizarRBus();
+                clear();
+                cargarMarca();
+                cragarRuta();
+                cagarChofer();
+
+            }
+        }
+	
+
+         
         private void clear()
         {
-            Cmb_autobus.SelectedText = null;
-            Cmb_chofer.SelectedText = null;
-            Cmb_ruta.SelectedText = null;
+            Cmb_autobus.Text = "";
+            Cmb_chofer.Text = "";
+            Cmb_ruta.Text = "";
         }
-        private void Form4_Load(object sender, EventArgs e)
+        private void cargarMarca()
         {
-            var result =  entra.load("SP_Conductor_Load");
+            Cmb_autobus.Items.Clear();
+            var result = entra.load("SP_Bus_Load");
             foreach (var item in result)
             {
                 Cmb_autobus.Items.Add(item);
             }
-            
-            
-            
-            
+        }
+        private void cragarRuta()
+        {
+            Cmb_ruta.Items.Clear();
+
+            var result2 = entra.loadR("SP_Ruta_Load");
+            foreach (var item in result2)
+            {
+                Cmb_ruta.Items.Add(item);
+            }
+        }
+       private void cagarChofer()
+        {
+            Cmb_chofer.Items.Clear();
+
+            var result3 = entra.loadC("SP_Conductor_Load");
+            foreach (var item in result3)
+            {
+                Cmb_chofer.Items.Add(item);
+            }
+        }
+        private void Form4_Load(object sender, EventArgs e)
+        {
+            Tabla.ClearSelection();
+            cargarMarca();
+            cragarRuta();
+            cagarChofer();
+            MostrarBusqueda("");
+
         }
         public void MostrarBusqueda(string buscar)
         {
             B_Informacion cap = new B_Informacion();
             Tabla.DataSource = cap.lista(buscar);
-           
-
-
-
-
-
+            Tabla.ClearSelection();
 
         }
-        public void ModerTable()
+        public void add()
         {
-           /* Tabla.Columns[0].Width = 58;
-            Tabla.Columns[1].Width = 10;
-            Tabla.Columns[2].Width = -20;
-            Tabla.Columns[3].Width = 0;
-            Tabla.Columns[4].Width = 80;*/
+            E_Vincular ad = new E_Vincular();
+
+            ad.Chofer = Cmb_chofer.Text.Split("-")[1];
+            ad.Ruta = Cmb_ruta.Text.Split("-")[1];
+            ad.Autobus = Cmb_autobus.Text.Split("-")[1];
+            entra.Insert(ad);
+            MessageBox.Show("Agregado Exitosamente","Informacion");
+            MostrarBusqueda("");
+
+
         }
+        public void ActualizarUsuario()
+        {
+            E_Vincular v = new E_Vincular();
+            v.Id = Cmb_chofer.Text.Split("-")[1];
+            entra.uptateU(v);
+            
+
+        }
+        public void ActualizarRuta()
+        {
+            E_InformacionR r = new E_InformacionR();
+            r.Id  = Cmb_ruta.Text.Split("-")[1];
+            entra.UpdateRuta(r);
+        }
+        public void ActualizarRBus()
+        {
+            E_InfromacionB b = new E_InfromacionB();
+            b.Id = Cmb_autobus.Text.Split("-")[1];
+            entra.UpdateBus(b);
+        }
+         
         private void button1_Click(object sender, EventArgs e)
         {
-          /*  ActualizarEstadoBus();
-            ActualizarEstadoConductor();
-            ActualizarEstadoRutas();
-            InsertarEnTabla();*/
-            clear();
-           //LoadCombo();
-            /*LoadComboBus();
-            LoadComboRuta();*/
+            validar();
+            
         }
 
-        private void Tabla_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void Cmb_autobus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

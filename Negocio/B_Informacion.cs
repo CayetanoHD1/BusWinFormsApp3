@@ -50,6 +50,35 @@ namespace CapaNegocio
         {
             return cap.loadData(procedure);
         }
-        
+        public List<string> loadR(string procedure)
+        {
+            return cap.loadRuta(procedure);
+        }
+        public List<string> loadC(string procedure)
+        {
+            return cap.loadChofer(procedure);
+        }
+        public void Insert(E_Vincular vinc)
+        {
+            cap.Insertartabla(vinc);
+
+        }
+        public void uptateU(E_Vincular v)
+        {
+            cap.UpdateusUario(v);
+        }
+        public void UpdateRuta(E_InformacionR R)
+        {
+            cap.UpdateusRuta(R);
+        }
+        public void UpdateBus(E_InfromacionB B)
+        {
+            cap.UpdateusBus(B);
+        }
+        public Tablero ContarU(Tablero u)
+        {
+         return cap.DashboardDatos(u);
+        }
+
     }
 }
