@@ -24,6 +24,10 @@ namespace CapaNegocio
         {
             return cap.loginn(Correo, Pass, Rol);
         }
+        public E_informacion2 Rol( string Rol)
+        {
+            return cap.CheckRol( Rol);
+        }
         public void insertandoRuta(E_InformacionR ruta)
         {
             cap.AddRuta(ruta);
@@ -78,6 +82,10 @@ namespace CapaNegocio
         public Tablero ContarU(Tablero u)
         {
          return cap.DashboardDatos(u);
+        }
+        public void ActualizaTodo(E_InformacionDriver d)
+        {
+            cap.TodoStop(d);
         }
 
     }

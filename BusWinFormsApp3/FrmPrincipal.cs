@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using CapaEntidades;
-
+using Presentacion;
 
 namespace BusWinFormsApp3
 {
@@ -19,7 +19,7 @@ namespace BusWinFormsApp3
     {
         public string Nombre { get; set; }
         public Form  Activado = null;
-        B_Informacion cap = new B_Informacion();
+       // B_Informacion cap = new B_Informacion();
        
 
 
@@ -45,7 +45,7 @@ namespace BusWinFormsApp3
 
 
         private void Form2_Load(object sender, EventArgs e)
-        {   name.Text =$"Welcome! { Nombre}";
+        {   name.Text =$"Welcome! {Nombre}";
             cargar();
            
            
@@ -233,8 +233,8 @@ namespace BusWinFormsApp3
         private void Abrirhija4(FrmStop formhija3)
         {
             if (Activado != null)
-                 Activado.Close();
-             Activado = formhija3;
+                Activado.Close();
+            Activado = formhija3;
             formhija3.TopLevel = false;
             formhija3.Dock = DockStyle.Fill;
             panel_Centrar.Controls.Add(formhija3);
@@ -244,12 +244,28 @@ namespace BusWinFormsApp3
 
 
         }
+        private void tablero(FrmTablerocs tablero)
+        {
+            if (Activado != null)
+                Activado.Close();
+            Activado = tablero;
+            tablero.TopLevel = false;
+            tablero.Dock = DockStyle.Fill;
+            panel_Centrar.Controls.Add(tablero);
+            panel_Centrar.Tag = tablero;
+            tablero.BringToFront();
+            tablero.nombre = Nombre;
+            tablero.Show();
+
+
+        }
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            panel_Centrar.Visible = false;
+          
 
             Abrirhija4(new FrmStop());
+           
         }
 
         
@@ -258,6 +274,7 @@ namespace BusWinFormsApp3
 
         private void pictureBox1_Click_2(object sender, EventArgs e)
         {
+            
             if (panel_Laterar.Width >= 206)
             {
                 this.timerOcultar.Enabled = true;
@@ -275,24 +292,19 @@ namespace BusWinFormsApp3
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void auto1_Click(object sender, EventArgs e)
         {
             
+            tablero(new FrmTablerocs());
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
-        private void name_Click(object sender, EventArgs e)
+        private void opcion2_Click(object sender, EventArgs e)
         {
-
+            tablero(new FrmTablerocs());
         }
     }
 }

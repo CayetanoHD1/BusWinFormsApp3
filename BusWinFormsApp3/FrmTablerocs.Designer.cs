@@ -29,7 +29,6 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTablerocs));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,7 +58,6 @@ namespace Presentacion
             this.label15 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -232,9 +230,9 @@ namespace Presentacion
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 28);
+            this.label3.Size = new System.Drawing.Size(148, 28);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Total de Bus";
+            this.label3.Text = "Total Choferes";
             // 
             // label6
             // 
@@ -279,9 +277,9 @@ namespace Presentacion
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(-1, 59);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 28);
+            this.label9.Size = new System.Drawing.Size(164, 28);
             this.label9.TabIndex = 2;
-            this.label9.Text = "Total de Bus";
+            this.label9.Text = "Total Autobuses";
             // 
             // label10
             // 
@@ -294,7 +292,6 @@ namespace Presentacion
             this.label10.TabIndex = 1;
             this.label10.Text = "0.00";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -325,11 +322,11 @@ namespace Presentacion
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(2, 60);
+            this.label12.Location = new System.Drawing.Point(3, 60);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(128, 28);
+            this.label12.Size = new System.Drawing.Size(102, 28);
             this.label12.TabIndex = 4;
-            this.label12.Text = "Total de Bus";
+            this.label12.Text = "Rutas ON";
             // 
             // labelRtotal
             // 
@@ -348,7 +345,7 @@ namespace Presentacion
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(0, 6);
+            this.label13.Location = new System.Drawing.Point(3, 6);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(181, 28);
             this.label13.TabIndex = 4;
@@ -372,11 +369,11 @@ namespace Presentacion
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(0, 59);
+            this.label14.Location = new System.Drawing.Point(3, 64);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(128, 28);
+            this.label14.Size = new System.Drawing.Size(125, 28);
             this.label14.TabIndex = 5;
-            this.label14.Text = "Total de Bus";
+            this.label14.Text = "Rutas en OF";
             // 
             // label1RDtotal
             // 
@@ -397,15 +394,14 @@ namespace Presentacion
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(0, 6);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(181, 28);
+            this.label15.Size = new System.Drawing.Size(154, 28);
             this.label15.TabIndex = 5;
-            this.label15.Text = "Rutas Disponibles";
+            this.label15.Text = "Rutas Ocupada";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.name);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -421,20 +417,6 @@ namespace Presentacion
             this.label1.Size = new System.Drawing.Size(149, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dashboard";
-            // 
-            // name
-            // 
-            this.name.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.name.ForeColor = System.Drawing.Color.White;
-            this.name.Image = ((System.Drawing.Image)(resources.GetObject("name.Image")));
-            this.name.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.name.Location = new System.Drawing.Point(956, 3);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(241, 27);
-            this.name.TabIndex = 2;
-            this.name.Text = "Cantidad de Bus";
-            this.name.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.name.Click += new System.EventHandler(this.name_Click);
             // 
             // FrmTablerocs
             // 
@@ -479,7 +461,6 @@ namespace Presentacion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel3;

@@ -14,6 +14,7 @@ namespace Presentacion
 {
     public partial class FrmTablerocs : Form
     {
+        public string nombre;
         B_Informacion cap = new B_Informacion();
         public FrmTablerocs()
         {
@@ -44,12 +45,11 @@ namespace Presentacion
 
         private void FrmTablerocs_Load(object sender, EventArgs e)
         {
+            //name.Text = "hola"+nombre;
             cargar();
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
 
         }
+
+         
     }
 }

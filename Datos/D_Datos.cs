@@ -88,6 +88,40 @@ namespace CapaDatos
              
 
         }
+        public E_informacion2 CheckRol( string Rol)
+        {
+            co.Close();
+            SqlDataReader read2;
+            SqlCommand comando = new SqlCommand("SP_Roll", co);
+            comando.CommandType = CommandType.StoredProcedure;
+            co.Open();
+            comando.Parameters.AddWithValue("@Rol", Rol);
+
+            read2 = comando.ExecuteReader();
+
+
+            if (read2.Read())
+            {
+                E_informacion2 inf = new E_informacion2();
+
+                inf.Rol = read2.IsDBNull(8) ? "" : read2.GetString(8);
+
+
+
+                return inf;
+
+
+
+
+            }
+            else
+            {
+                return null;
+            }
+            read2.Close();
+
+
+        }
         public void AddRuta(E_InformacionR ruta)
         {
             co.Close();
@@ -321,7 +355,7 @@ namespace CapaDatos
 
         }
         public void UpdateusUario(E_Vincular ad)
-        {co.Close();
+        {   co.Close();
             SqlCommand command = new SqlCommand("SP_ActualizarU",co);
             command.CommandType = CommandType.StoredProcedure;
             
@@ -375,6 +409,16 @@ namespace CapaDatos
 
             return carga;
             
+        }
+        public void TodoStop(E_InformacionDriver dr)
+        {
+            co.Close();
+            SqlCommand cdm = new SqlCommand("SP_General",co);
+            cdm.CommandType = CommandType.StoredProcedure;
+            cdm.Parameters.AddWithValue("@Cedula", dr.Cedula);
+            co.Open();
+            cdm.ExecuteNonQuery();
+
         }
     }
 }

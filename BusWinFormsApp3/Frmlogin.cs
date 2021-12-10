@@ -12,12 +12,13 @@ using CapaNegocio;
 using CapaEntidades;
 
 using CapaDatos;
+using Presentacion;
 
 namespace BusWinFormsApp3
 {
     public partial class ventana1 : Form
     {
-        bool t = false;
+        
         private B_Informacion date= new B_Informacion();
         public ventana1()
         {
@@ -30,7 +31,9 @@ namespace BusWinFormsApp3
              
                 try
                 {
+                FrmStop stop = new FrmStop();
                     FrmPrincipal win2 = new FrmPrincipal();
+                    FrmTablerocs tab = new FrmTablerocs();
 
                     if (string.IsNullOrWhiteSpace(caja_correo.Text)|| string.IsNullOrEmpty(caja_pass.Text))
                     {
@@ -67,6 +70,10 @@ namespace BusWinFormsApp3
 
                             this.Hide();
                             win2.Nombre = info.Nombre;
+                            stop.Rol = info.Rol;
+                            DataStatic.Rol = info.Rol;
+                           // MessageBox.Show("Test" + tab.nombre);
+
 
 
                             win2.Show();
@@ -80,6 +87,11 @@ namespace BusWinFormsApp3
 
                             this.Hide();
                             win2.Nombre = info.Nombre;
+                            stop.Rol = info.Rol;
+                            DataStatic.Rol = info.Rol;
+
+                            // win2.Nombre = info.Nombre;
+                            //MessageBox.Show("Test"+tab.nombre);
 
 
                             win2.Show();

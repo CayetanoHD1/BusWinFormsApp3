@@ -8,20 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CapaNegocio;
+using CapaEntidades;
 
 namespace BusWinFormsApp3
 {
     public partial class FrmStop : Form
     {
-        SqlCommand cmd;
+        public string Rol;
+        B_Informacion info = new B_Informacion();
+        E_InformacionDriver driver = new E_InformacionDriver();
         public FrmStop()
         {
             InitializeComponent();
         }
-        private void ActualizarEstadoConductor()
+        /*private void ActualizarEstadoConductor()
         {
 
-            SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
+            /*SqlConnection con = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
             try
             {
                 if (string.IsNullOrEmpty(txtCedula.Text))
@@ -48,48 +52,60 @@ namespace BusWinFormsApp3
             {
                 MessageBox.Show($"Error {ex}");
             }
-        }
+        }*/
         private void Todo()
         {
-            string id = txtCedula.Text;
-
-            SqlConnection cont = new SqlConnection("SERVER=DESKTOP-EOJG6OO\\SQLEXPRESSS;DATABASE=Login_Bus;integrated Security = true");
-
-            try
-            {
-
-                SqlCommand comando = new SqlCommand("LOGICREFRESH", cont);
-                comando.CommandType = CommandType.StoredProcedure;
-                cont.Open();
-               /* comando = cont.CreateCommand();
-                comando.CommandText = "exec SP_Insertar";
-                comando.CommandType = CommandType.StoredProcedure;*/
-                comando.Parameters.AddWithValue("@cedula",id);
-                
-                
-
-                comando.ExecuteNonQuery();
-                cont.Close();
-
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error {ex}");
-            }
            
+            
+                try
+                {
+
+                     
+                    if (Rol == "USUARIO")
+                    {
+                        driver.Cedula = txtCedula.Text;
+                        info.ActualizaTodo(driver);
+                        MessageBox.Show("Conductor en Stop");
+
+
+
+
+                    }
+                    if (Rol=="ADMINISTRADOR")
+                    {
+                        MessageBox.Show("Esta Cedula pertenece a un administrador ");
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+               
+            
+            
+
+
+
 
         }
+
+
+
 
 
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ActualizarEstadoConductor();
             Todo();
+            txtCedula.Text = "";
 
+        }
 
+        private void FrmStop_Load(object sender, EventArgs e)
+        {
+            Rol = DataStatic.Rol;
         }
     }
 }

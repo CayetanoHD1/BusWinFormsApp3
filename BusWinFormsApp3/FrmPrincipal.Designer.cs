@@ -37,7 +37,6 @@ namespace BusWinFormsApp3
             this.maximizar_v2 = new System.Windows.Forms.PictureBox();
             this.cerrar_v2 = new System.Windows.Forms.PictureBox();
             this.panel_Laterar = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.opcion2 = new System.Windows.Forms.PictureBox();
             this.auto1 = new System.Windows.Forms.PictureBox();
@@ -148,7 +147,6 @@ namespace BusWinFormsApp3
             this.panel_Laterar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_Laterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panel_Laterar.Controls.Add(this.button1);
             this.panel_Laterar.Controls.Add(this.pictureBox1);
             this.panel_Laterar.Controls.Add(this.opcion2);
             this.panel_Laterar.Controls.Add(this.auto1);
@@ -164,26 +162,6 @@ namespace BusWinFormsApp3
             this.panel_Laterar.Name = "panel_Laterar";
             this.panel_Laterar.Size = new System.Drawing.Size(206, 562);
             this.panel_Laterar.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 463);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 34);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "DashBoard";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -209,6 +187,7 @@ namespace BusWinFormsApp3
             this.opcion2.TabIndex = 10;
             this.opcion2.TabStop = false;
             this.opcion2.Visible = false;
+            this.opcion2.Click += new System.EventHandler(this.opcion2_Click);
             // 
             // auto1
             // 
@@ -234,7 +213,7 @@ namespace BusWinFormsApp3
             this.btnUsuario.ForeColor = System.Drawing.Color.White;
             this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
             this.btnUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuario.Location = new System.Drawing.Point(0, 277);
+            this.btnUsuario.Location = new System.Drawing.Point(2, 276);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(203, 34);
             this.btnUsuario.TabIndex = 7;
@@ -266,7 +245,7 @@ namespace BusWinFormsApp3
             this.btnVincular.ForeColor = System.Drawing.Color.White;
             this.btnVincular.Image = ((System.Drawing.Image)(resources.GetObject("btnVincular.Image")));
             this.btnVincular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVincular.Location = new System.Drawing.Point(3, 399);
+            this.btnVincular.Location = new System.Drawing.Point(3, 397);
             this.btnVincular.Name = "btnVincular";
             this.btnVincular.Size = new System.Drawing.Size(203, 34);
             this.btnVincular.TabIndex = 4;
@@ -378,6 +357,7 @@ namespace BusWinFormsApp3
             // 
             // name
             // 
+            this.name.BackColor = System.Drawing.Color.White;
             this.name.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.name.ForeColor = System.Drawing.Color.Black;
             this.name.Image = ((System.Drawing.Image)(resources.GetObject("name.Image")));
@@ -388,7 +368,6 @@ namespace BusWinFormsApp3
             this.name.TabIndex = 2;
             this.name.Tag = "";
             this.name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.name.Click += new System.EventHandler(this.name_Click);
             // 
             // panel1
             // 
@@ -451,6 +430,7 @@ namespace BusWinFormsApp3
             // 
             // panels
             // 
+            this.panels.BackColor = System.Drawing.SystemColors.Control;
             this.panels.Controls.Add(this.panel_Centrar);
             this.panels.Controls.Add(this.panel_Laterar);
             this.panels.Controls.Add(this.panel1);
@@ -520,7 +500,6 @@ namespace BusWinFormsApp3
         private System.Windows.Forms.PictureBox opcion2;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Button Btb_conductor;
-        public System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label name;
     }
 }

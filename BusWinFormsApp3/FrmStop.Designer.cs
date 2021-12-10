@@ -67,6 +67,7 @@ namespace BusWinFormsApp3
             // txtCedula
             // 
             this.txtCedula.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCedula.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCedula.Location = new System.Drawing.Point(244, 80);
             this.txtCedula.Multiline = true;
             this.txtCedula.Name = "txtCedula";
@@ -88,7 +89,7 @@ namespace BusWinFormsApp3
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(204, 165);
+            this.pictureBox1.Location = new System.Drawing.Point(205, 165);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(350, 215);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -114,6 +115,7 @@ namespace BusWinFormsApp3
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmStop";
             this.Text = "Stop";
+            this.Load += new System.EventHandler(this.FrmStop_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
