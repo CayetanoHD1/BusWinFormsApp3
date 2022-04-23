@@ -36,18 +36,14 @@ namespace BusWinFormsApp3
 
                 else
                 {
-                    E_InformacionDriver date = metodo.driverCheck(txt_correo.Text.ToUpper(), txt_cedula.Text.ToUpper());
+                    E_InformacionDriver date = metodo.driverCheck(txt_correo.Text, txt_cedula.Text);
 
                     if (date != null)
                     {
-                        
-                        
+
+
+
                        
-                        if (txt_cedula.Text == date.Cedula && txt_correo.Text.ToUpper() == date.Correo)
-                        {
-                            MessageBox.Show($"La Cedula: {date.Cedula} y Correo: {txt_correo.Text} Existen Anteriolmente", "Advertencia");
-                            
-                        }
                         if (txt_cedula.Text == date.Cedula)
                         {
 

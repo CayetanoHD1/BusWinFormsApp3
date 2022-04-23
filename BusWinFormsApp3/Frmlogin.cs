@@ -71,7 +71,7 @@ namespace BusWinFormsApp3
                             this.Hide();
                             win2.Nombre = info.Nombre;
                             stop.Rol = info.Rol;
-                            DataStatic.Rol = info.Rol;
+                           // DataStatic.Rol = info.Rol;
                            // MessageBox.Show("Test" + tab.nombre);
 
 
@@ -88,7 +88,7 @@ namespace BusWinFormsApp3
                             this.Hide();
                             win2.Nombre = info.Nombre;
                             stop.Rol = info.Rol;
-                            DataStatic.Rol = info.Rol;
+                            //DataStatic.Rol = info.Rol;
 
                             // win2.Nombre = info.Nombre;
                             //MessageBox.Show("Test"+tab.nombre);

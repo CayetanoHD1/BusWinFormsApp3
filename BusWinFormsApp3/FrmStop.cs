@@ -61,8 +61,8 @@ namespace BusWinFormsApp3
                 {
 
                      
-                    if (Rol == "USUARIO")
-                    {
+                   /* if (Rol == "USUARIO")
+                    {*/
                         driver.Cedula = txtCedula.Text;
                         info.ActualizaTodo(driver);
                         MessageBox.Show("Conductor en Stop");
@@ -70,11 +70,11 @@ namespace BusWinFormsApp3
 
 
 
-                    }
-                    if (Rol=="ADMINISTRADOR")
+                    //}
+                   /* if (Rol=="ADMINISTRADOR")
                     {
                         MessageBox.Show("Esta Cedula pertenece a un administrador ");
-                    }
+                    }*/
 
                 }
                 catch (Exception)
